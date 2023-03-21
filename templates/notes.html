@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Notes{% endblock %}
+
+{% block content %}
+    <main class="container mt-5 mb-5">
+        <h1 class="text-white fw-bold mb-3" style="font-size: 5rem; font-family: 'Ubuntu Mono',monospace">All Notes</h1>
+        <div class="bg-dark rounded-borders" style="padding: 40px">
+            <div class="row gap-4 justify-content-left">
+                {% if notes|length == 0 %}
+                    <h3 class="text-white fw-bold">Wow! There are no Notes! Add one now!</h3>
+                {% else %}
+                    {% for note in notes %}
+                        <div style="max-width: 32%">
+                            {% include "note.html" %}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div style="padding-top: 10px">
+                <a href="/add_note/" class="btn btn-lg btn-warning" style="margin-top: 20px">Add Note</a>
+                <a href="/" class="btn btn-lg btn-warning" style="margin-top: 20px">Back to Main Page</a>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+    <main class="container mt-5 mb-5">
+        <h1 class="text-white fw-bold mb-3" style="font-size: 5rem; font-family: 'Ubuntu Mono',monospace">Main Page</h1>
+        <div class="bg-dark rounded-borders" style="padding: 40px; text-align: center">
+            <h3 class="text-white mb-3">What would you like to do?</h3>
+            <a href="/add_note/" class="btn btn-lg btn-warning">Add Note</a>
+            <a href="/notes/" class="btn btn-lg btn-warning">View Notes</a>
+        </div>
+    </main>
+{% endblock %}
